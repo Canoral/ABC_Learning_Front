@@ -31,7 +31,8 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir des issues pour
 
 ## Auteur
 
-[@canoral](https://github.com/Canoral)
+**[@canoral](https://github.com/Canoral)**
+**[@Loic-Dubrion](https://github.com/Loic-Dubrion/)**
 
 ## Licence
 
