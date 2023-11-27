@@ -31,7 +31,7 @@ Les contributions sont les bienvenues ! N'hésitez pas à ouvrir des issues pour
 
 ## Auteur
 
-[Can KAYA]
+[@canoral](https://github.com/Canoral)
 
 ## Licence
 
