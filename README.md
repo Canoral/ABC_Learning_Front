@@ -20,7 +20,7 @@ L'outil permet de créer des storyboards interactifs pour représenter visuellem
 
 ## Installation
 
-1. Clonez le dépôt : `git clone https://github.com/votre-utilisateur/abc-learning-design-plugin.git`
+1. Clonez le dépôt
 2. Accédez au répertoire du projet
 3. Installez les dépendances : npm install
 4. Lancez la commande : npm run dev
