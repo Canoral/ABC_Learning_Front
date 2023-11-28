@@ -1,4 +1,4 @@
-# ABC Learning Design Moodle Plugin
+# ABC Learning : Outil de scénarisation pedagogique
 
 ## Description
 
