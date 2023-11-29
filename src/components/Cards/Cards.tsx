@@ -3,12 +3,7 @@ import { useEffect, useRef } from "react";
 // Redux functions
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 // Reducers actions
-import {
-  getAllCards,
-  getOneCard,
-  getOneTool,
-  modalIsOpen,
-} from "../../redux/store/reducers/card";
+import { getAllCards, getOneCard, getOneTool, modalIsOpen } from "../../redux/store/reducers/card";
 // Components
 import CreateSession from "../Modals/CreateSession";
 
@@ -58,14 +53,9 @@ function Cards() {
                   {oneCard &&
                     oneCard.length > 0 &&
                     oneCard.map((current) => (
-                      <dialog
-                        id="my_modal_2"
-                        className="modal"
-                        key={current.get_activities.card_id}
-                        ref={cardRef}
-                      >
+                      <dialog id="my_modal_2" className="modal" key={current.get_activities.card_id} ref={cardRef}>
                         <div
-                          className="modal-box w-full max-w-5xl flex gap-2"
+                          className="modal-box w-full lg:max-w-5xl flex gap-2 max-md:max-w-2xl"
                           style={{ background: current.get_activities.color }}
                         >
                           <div
@@ -75,17 +65,13 @@ function Cards() {
                             }}
                           >
                             <div className="card-body">
-                              <h2 className="card-title text-white">
-                                {current.get_activities.card_name}
-                              </h2>
+                              <h2 className="card-title text-white">{current.get_activities.card_name}</h2>
                               <ul>
-                                {current.get_activities.activities.map(
-                                  (activities, index) => (
-                                    <li className="py-2 text-white" key={index}>
-                                      {activities}
-                                    </li>
-                                  )
-                                )}
+                                {current.get_activities.activities.map((activities, index) => (
+                                  <li className="py-2 text-white" key={index}>
+                                    {activities}
+                                  </li>
+                                ))}
                               </ul>
                             </div>
                           </div>
@@ -95,38 +81,19 @@ function Cards() {
                               background: current.get_activities.color,
                             }}
                           >
-                            {current.get_activities.tool_categories.map(
-                              (tool, index) => (
-                                <div className="card-body flex" key={index}>
-                                  <strong className="card-title text-sm text-white">
-                                    {tool.tool_category_name}
-                                  </strong>
-                                  <p>
-                                    {!isChecked &&
-                                      tool.tools
-                                        .filter((e) => e.level_id === 1)
-                                        .map((e) => (
-                                          <button
-                                            key={e.tool_name}
-                                            className="btn btn-sm normal-case m-1"
-                                            type="button"
-                                            onClick={() => {
-                                              cardRef.current?.close();
-                                              dispatch(getOneTool(e.tool_id));
-                                              dispatch(modalIsOpen(isOpen));
-                                            }}
-                                          >
-                                            {e.tool_name}
-                                          </button>
-                                        ))}
-                                    {isChecked &&
-                                      tool.tools.map((e) => (
+                            {current.get_activities.tool_categories.map((tool, index) => (
+                              <div className="card-body flex" key={index}>
+                                <strong className="card-title text-sm text-white">{tool.tool_category_name}</strong>
+                                <p>
+                                  {!isChecked &&
+                                    tool.tools
+                                      .filter((e) => e.level_id === 1)
+                                      .map((e) => (
                                         <button
                                           key={e.tool_name}
                                           className="btn btn-sm normal-case m-1"
                                           type="button"
                                           onClick={() => {
-                                            cardRef.current?.close();
                                             cardRef.current?.close();
                                             dispatch(getOneTool(e.tool_id));
                                             dispatch(modalIsOpen(isOpen));
@@ -135,10 +102,25 @@ function Cards() {
                                           {e.tool_name}
                                         </button>
                                       ))}
-                                  </p>
-                                </div>
-                              )
-                            )}
+                                  {isChecked &&
+                                    tool.tools.map((e) => (
+                                      <button
+                                        key={e.tool_name}
+                                        className="btn btn-sm normal-case m-1"
+                                        type="button"
+                                        onClick={() => {
+                                          cardRef.current?.close();
+                                          cardRef.current?.close();
+                                          dispatch(getOneTool(e.tool_id));
+                                          dispatch(modalIsOpen(isOpen));
+                                        }}
+                                      >
+                                        {e.tool_name}
+                                      </button>
+                                    ))}
+                                </p>
+                              </div>
+                            ))}
                           </div>
                         </div>
                         <form method="dialog" className="modal-backdrop">
@@ -148,9 +130,7 @@ function Cards() {
                     ))}
                   <CreateSession
                     color={
-                      oneCard &&
-                      oneCard.length > 0 &&
-                      typeof oneCard[0]?.get_activities.color === "string"
+                      oneCard && oneCard.length > 0 && typeof oneCard[0]?.get_activities.color === "string"
                         ? oneCard[0]?.get_activities.color
                         : ""
                     }

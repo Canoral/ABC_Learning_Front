@@ -34,15 +34,9 @@ function CreateSession({ isOpen, color }: ICreateSession) {
 
   return (
     <dialog id="create_modal" className="modal" open={isOpen}>
-      <div
-        className="modal-box w-full max-w-5xl"
-        style={{ backgroundColor: color }}
-      >
+      <div className="modal-box w-full lg:max-w-5xl" style={{ backgroundColor: color }}>
         <form onSubmit={handleFormSubmit} ref={formRef}>
-          <label
-            htmlFor="name"
-            className="flex flex-col mb-2 text-sm font-medium text-white"
-          >
+          <label htmlFor="name" className="flex flex-col mb-2 text-sm font-medium text-white">
             Nom de la session
             <input
               id="name"
@@ -53,10 +47,7 @@ function CreateSession({ isOpen, color }: ICreateSession) {
               required
             />
           </label>
-          <label
-            htmlFor="time"
-            className="flex flex-col mb-2 text-sm font-medium text-white "
-          >
+          <label htmlFor="time" className="flex flex-col mb-2 text-sm font-medium text-white ">
             Durée en minutes
             <input
               type="number"
@@ -108,10 +99,7 @@ function CreateSession({ isOpen, color }: ICreateSession) {
               <option value="Individuel">Individuel</option>
             </select>
           </label>
-          <label
-            htmlFor="comments"
-            className="block mb-2 text-sm font-medium text-white"
-          >
+          <label htmlFor="comments" className="block mb-2 text-sm font-medium text-white">
             Remarques
             <textarea
               id="comments"
@@ -121,10 +109,7 @@ function CreateSession({ isOpen, color }: ICreateSession) {
               autoComplete="off"
             />
           </label>
-          <label
-            htmlFor="equipment"
-            className="flex flex-col  text-sm font-medium text-white"
-          >
+          <label htmlFor="equipment" className="flex flex-col  text-sm font-medium text-white">
             Matériel
             <div className="flex flex-row items-end">
               <div className="flex-grow">
