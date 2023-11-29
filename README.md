@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# ABC Learning : Outil de scénarisation pedagogique
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Ce projet consiste en un plugin développé en TypeScript, React et utilisant TailwindCSS. Il est conçu pour être intégré dans la plateforme Moodle afin de faciliter la méthode ABC Learning Design pour la planification des activités d'enseignement à l’université de Reims.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+L'outil permet de créer des storyboards interactifs pour représenter visuellement les programmes de formation. Il offre une grande flexibilité dans le choix et la personnalisation des activités, facilitant ainsi la collaboration avec les enseignants.
 
-## Expanding the ESLint configuration
+## Fonctionnalités
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Storyboard Interactif :** Créez des représentations visuelles des programmes de formation à l'aide de storyboards interactifs.
+- **Flexibilité :** Choisissez et personnalisez les activités d'enseignement en fonction des besoins spécifiques.
+- **Adaptation aux Enseignants :** En collaboration avec les enseignants, le logiciel a été adapté pour répondre à leurs besoins.
+- **Interface Conviviale :** Propose une interface conviviale pour une expérience utilisateur agréable.
 
-- Configure the top-level `parserOptions` property like this:
+## Prérequis
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Node.js
+- Npm
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+
+1. Clonez le dépôt
+2. Accédez au répertoire du projet
+3. Installez les dépendances : npm install
+4. Lancez la commande : npm run dev
+
+## Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir des issues pour des suggestions ou des problèmes, et à soumettre des pull requests.
+
+## Auteur
+
+**[@canoral](https://github.com/Canoral)**
+**[@Loic-Dubrion](https://github.com/Loic-Dubrion/)**
+
+## Licence
+
+Ce projet est sous licence [MIT License](LICENSE).
