@@ -1,4 +1,4 @@
 export interface IUserMessage {
-  message: string | null;
-  name: string | null;
+  message: string;
+  name: string;
 }

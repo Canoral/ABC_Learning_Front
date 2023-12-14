@@ -1,12 +1,12 @@
 // React Router
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 // Redux
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch } from "../../redux/hooks";
 // Reducers actions
-import { logout } from '../../redux/store/reducers/user';
+import { logout } from "../../redux/store/reducers/user";
 // Module & Library
 
-import CreateSequence from '../Modals/CreateSequence';
+import CreateSequence from "../Modals/CreateSequence";
 
 function WhenIsLogged() {
   const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ function WhenIsLogged() {
         className="btn btn-ghost w-full"
         onClick={() => {
           dispatch(logout());
-          navigate('/');
+          navigate("/");
         }}
       >
         <Link to="/">Déconnexion</Link>
