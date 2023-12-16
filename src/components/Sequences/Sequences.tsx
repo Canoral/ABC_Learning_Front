@@ -1,11 +1,14 @@
-import moment from "moment";
-
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { deleteSequence } from "../../redux/store/reducers/sequence";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import "moment/locale/fr";
+import moment from 'moment';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import {
+  deleteSequence,
+  getAllSequences,
+} from '../../redux/store/reducers/sequence';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import 'moment/locale/fr';
 
 function Sequences() {
   const dispatch = useAppDispatch();
@@ -37,7 +40,7 @@ function Sequences() {
                       className="btn bg-transparent border-none"
                       onClick={() => {
                         handleDeleteSequence(sequence.id as number);
-                        localStorage.removeItem("sequence_name");
+                        localStorage.removeItem('sequence_name');
                       }}
                     >
                       <FontAwesomeIcon icon={faTrashCan} size="lg" />
@@ -52,7 +55,7 @@ function Sequences() {
                   <td>
                     <p className="table-row-link">
                       {moment(sequence.created_at).format(
-                        "DD/MM/YYYY HH:mm:ss"
+                        'DD/MM/YYYY HH:mm:ss'
                       )}
                     </p>
                   </td>
@@ -62,7 +65,7 @@ function Sequences() {
                       className="table-row-link text-blue-700"
                       onClick={() => {
                         localStorage.setItem(
-                          "sequence_name",
+                          'sequence_name',
                           sequence.name as string
                         );
                       }}

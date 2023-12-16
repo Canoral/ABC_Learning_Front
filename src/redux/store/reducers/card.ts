@@ -36,7 +36,7 @@ export const getAllCards = createAsyncThunk(
 export const getOneCard = createAsyncThunk(
   "card/fetch a specific card",
   async (cardId: string) => {
-    const response = await axiosInstance.get(`/storyBoard/cards/${cardId}`);
+    const response = await axiosInstance.get(`storyBoard/cards/${cardId}`);
     response.data.map(
       (e: { get_activities: { card_id: string; color: string } }) => {
         localStorage.setItem("card_id", e.get_activities.card_id),
