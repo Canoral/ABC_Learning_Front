@@ -1,7 +1,7 @@
 // Dans votre fichier où vous utilisez Axios (par exemple, api.ts)
-import axios, { AxiosError } from 'axios';
-import store from '../redux/store';
-import { setError } from '../redux/store/reducers/error';
+import axios, { AxiosError } from "axios";
+import store from "../redux/store";
+import { setError } from "../redux/store/reducers/error";
 
 interface ICustomError extends AxiosError {
   message: string;
@@ -10,15 +10,15 @@ interface ICustomError extends AxiosError {
 }
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: "https://www.lodev.tech/api",
   timeout: 10000,
 });
 
 instance.interceptors.request.use(
   (config) => {
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
-      config.headers['Authorization'] = `Bearer ${accessToken}`;
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
     }
     return config;
   },
@@ -43,7 +43,7 @@ instance.interceptors.response.use(
       name: axiosError.name,
     };
     if (error.status === 403) {
-      console.log('error :', error);
+      console.log("error :", error);
       store.dispatch(setError(errorData));
     }
 
